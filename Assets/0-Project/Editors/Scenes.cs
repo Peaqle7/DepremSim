@@ -34,11 +34,11 @@ public class Scenes
         EditorSceneManager.OpenScene("Assets/Scenes/Anket.unity");
     }
 
-    [MenuItem("Scenes/yeniSahne")]
+    [MenuItem("Scenes/GameScene")]
     public static void LoadScene2()
     {
         EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
-        EditorSceneManager.OpenScene("Assets/Scenes/yeniSahne.unity");
+        EditorSceneManager.OpenScene("Assets/0-Project/Scenes/GameScene.unity");
     }
     [MenuItem("Scenes/SampleScene")]
     public static void LoadScene3()

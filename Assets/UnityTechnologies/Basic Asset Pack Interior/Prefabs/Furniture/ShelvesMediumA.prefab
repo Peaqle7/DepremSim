@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 863274816247114712}
   - component: {fileID: 4347429713178535037}
   - component: {fileID: 1995616918818312375}
+  - component: {fileID: 4398262856761261878}
   m_Layer: 0
   m_Name: ShelvesMediumA
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 49864448021852514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.340715, y: 0.340715, z: 0.340715}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4398262856761261878
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49864448021852514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.76728, y: 2.8382359, z: 2.8388457}
+  m_Center: {x: 0.0000003725291, y: 1.4010985, z: -0.0000001192093}
