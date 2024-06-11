@@ -103,6 +103,7 @@ public class TopDownCharacterController : MonoBehaviour
         isOnRepairArea = false;
         repairState = false;
         currentObjectId = 0;
+        RepairObjectManager.Instance.DetectColliders(currentRepairObject);
         currentRepairObject = null;
         AnimationUpdate();
     }

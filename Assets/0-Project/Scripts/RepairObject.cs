@@ -14,6 +14,7 @@ public class RepairObject : MonoBehaviour
     private void Awake()
     {
         outline = interactionObject.GetComponent<Outline>();
+        outline.OutlineWidth = 3;
         hammerCounter = Random.Range(2, 7);
     }
 

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 831949184716657418}
   - component: {fileID: 6307904729853248907}
   - component: {fileID: 7755627758783459909}
-  - component: {fileID: 5075193078730869340}
   m_Layer: 0
   m_Name: drawer1_rightDoor
   m_TagString: Untagged
@@ -29,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.59664243, y: 0.025692977, z: 0.39124998}
   m_LocalScale: {x: 0.8333221, y: 0.8333221, z: 0.8333221}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6116805104873258654}
   m_RootOrder: 2
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5075193078730869340
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29948406370083738}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.094098754, y: 1.5117745, z: 0.46770525}
-  m_Center: {x: 0.047049236, y: -0.00034716725, z: -0.23350978}
 --- !u!1 &1472173413472177179
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +95,6 @@ GameObject:
   - component: {fileID: 6703588949347859407}
   - component: {fileID: 5462576701295486774}
   - component: {fileID: 5071520405840653163}
-  - component: {fileID: 2253652439739347670}
   m_Layer: 0
   m_Name: drawer1_leftDoor
   m_TagString: Untagged
@@ -126,6 +112,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.59664243, y: 0.025692977, z: -0.39130858}
   m_LocalScale: {x: 0.8333221, y: 0.8333221, z: 0.8333221}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6116805104873258654}
   m_RootOrder: 1
@@ -181,19 +168,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2253652439739347670
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472173413472177179}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.094098814, y: 1.5117745, z: 0.4677053}
-  m_Center: {x: 0.04704934, y: -0.00034734607, z: 0.23351139}
 --- !u!1 &1500448067402246920
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +194,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.6461809, y: 0.63271904, z: -122.47114}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7086132651324251753}
   - {fileID: 6703588949347859407}
@@ -253,6 +228,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6116805104873258654}
   m_Father: {fileID: 0}
@@ -269,7 +245,6 @@ GameObject:
   - component: {fileID: 7086132651324251753}
   - component: {fileID: 2655298369090954142}
   - component: {fileID: 7439997673224161813}
-  - component: {fileID: 2648092601031774479}
   m_Layer: 0
   m_Name: drawer1_body
   m_TagString: Untagged
@@ -287,6 +262,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: -0.000009765625}
   m_LocalScale: {x: 0.8333221, y: 0.8333221, z: 0.8333221}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6116805104873258654}
   m_RootOrder: 0
@@ -341,16 +317,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2648092601031774479
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4071809577016677687}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.71597964, y: 1.634721, z: 1.0548607}
-  m_Center: {x: 0.3579884, y: 0.034805357, z: 0.000022172928}
