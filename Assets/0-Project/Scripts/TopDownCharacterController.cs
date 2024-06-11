@@ -25,9 +25,16 @@ public class TopDownCharacterController : MonoBehaviour
     #endregion  
 
     private bool isOnRepairArea; //repair alanýnda ise
+
+    public ParticleSystem hitParticle;
+    public Transform hammer;
+
+    public AudioSource source;
+    public AudioClip hammerClip, walkClip;
     private void Awake()
     {
         Instance = this;
+        Application.targetFrameRate = 64;
     }
     void Start()
     {
@@ -72,7 +79,7 @@ public class TopDownCharacterController : MonoBehaviour
             Quaternion lookRotation = Quaternion.LookRotation(directionToTarget, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
         }
-        animator.SetFloat(MOVE, movement.magnitude);
+        animator.SetFloat(MOVE, rb.velocity.magnitude);
     }
 
     void FixedUpdate()
@@ -91,6 +98,7 @@ public class TopDownCharacterController : MonoBehaviour
 
     public void ClearRepairState()//repair oldugunda cagirilacak method
     {
+        UIManager.Instance.GetTick(currentRepairObject.transform.position + Vector3.up);
         target = null;
         isOnRepairArea = false;
         repairState = false;
@@ -103,8 +111,21 @@ public class TopDownCharacterController : MonoBehaviour
         if (target != null)
         {
             currentRepairObject.GetComponent<RepairObject>().HammerAction();
-            target.DOPunchScale(Vector3.one*.07f,.05f);
+            target.DOPunchScale(Vector3.one * .07f, .05f);
+            hitParticle.transform.position = hammer.position;
+            hitParticle.Play();
+            source.volume = 0.45f;
+            source.pitch = Random.Range(1, 1.4f);
+            source.PlayOneShot(hammerClip);
         }
+    }
+    public void OnWalk()
+    {
+        if (rb.velocity.magnitude < 0.4F)
+            return;
+        source.volume = 0.2f;
+        source.pitch = Random.Range(1, 1.4f);
+        source.PlayOneShot(walkClip);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -119,6 +140,10 @@ public class TopDownCharacterController : MonoBehaviour
                 target = other.GetComponent<RepairObject>().interactionObject;
                 currentRepairObject = other.GetComponent<RepairObject>();
             }
+            else
+            {
+                UIManager.Instance.GetTick(other.transform.position + Vector3.up);
+            }
         }
     }
     private void OnTriggerExit(Collider other)
@@ -130,6 +155,10 @@ public class TopDownCharacterController : MonoBehaviour
                 isOnRepairArea = false;
 
             }
+            //if (other.GetComponent<RepairObject>().isRepaired) 
+            //{
+            //    UIManager.Instance.OutTick(other.transform.position + Vector3.up);
+            //}
         }
     }
 

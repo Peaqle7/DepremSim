@@ -14,4 +14,18 @@ public class RepairObjectManager : MonoBehaviour
             counter++;
         }
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K)) 
+        {
+            foreach (var item in repairObjects)
+            {
+                if (!item.isRepaired) 
+                {
+                    item.interactionObject.gameObject.AddComponent<Rigidbody>().AddForce(new Vector3(0, 13, Random.Range(0, 6)), ForceMode.Impulse);
+                }
+            }
+        }
+    }
 }
