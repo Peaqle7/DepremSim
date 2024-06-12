@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class UIManager : MonoBehaviour
     public bool lastObjectTick;
     public GameObject panel1, panel2, MainPanel;
     public int panelCounter;
+    public TimerManager timerManager;
     private void Awake()
     {
         Instance = this;
@@ -47,7 +49,13 @@ public class UIManager : MonoBehaviour
             panel2.SetActive(false);
             MainPanel.SetActive(false);
             panelCounter++;
+            timerManager.startTimer = true;
         }
        
     }
+    public void RestartGame() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+   
 }

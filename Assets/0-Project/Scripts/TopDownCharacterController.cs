@@ -31,6 +31,8 @@ public class TopDownCharacterController : MonoBehaviour
 
     public AudioSource source;
     public AudioClip hammerClip, walkClip;
+
+    public TimerManager timerManager;
     private void Awake()
     {
         Instance = this;
@@ -106,6 +108,11 @@ public class TopDownCharacterController : MonoBehaviour
         RepairObjectManager.Instance.DetectColliders(currentRepairObject);
         currentRepairObject = null;
         AnimationUpdate();
+        RepairObjectManager.Instance.repairObjectCount--;
+        if (RepairObjectManager.Instance.repairObjectCount <= 0)
+        {
+            timerManager.timer = 0;
+        }
     }
     public void OnRepair()
     {
@@ -118,6 +125,7 @@ public class TopDownCharacterController : MonoBehaviour
             source.volume = 0.45f;
             source.pitch = Random.Range(1, 1.4f);
             source.PlayOneShot(hammerClip);
+            
         }
     }
     public void OnWalk()
